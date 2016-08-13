@@ -8,11 +8,6 @@ testfunctie <- function(left, top, right){
     print(g)
 }
 
-library(lattice)
-wireframe(z ~ x * y, data=data)
-wireframe(volcano, shade = TRUE,
-          aspect = c(61/87, 0.4),
-          light.source = c(10,0,10))
 
 testdataframe <- data.frame(
     x=c(.2,0,0, 1, .1), 
@@ -20,14 +15,5 @@ testdataframe <- data.frame(
     z=c(0,0,.5,1, 0) 
     )
 
-
-wireframe(z ~ x * y, data=testdataframe, 
-          scales = list( arrows = TRUE, col = "black"),
-          par.settings = list(axis.line = list(col = 'transparent')),
-          screen = list(z = -245, x = -75),
-          outer = TRUE, shade = TRUE, zlab = "")
-cloud(z ~ x * y, data=testdataframe, 
-      scales = list( arrows = TRUE, col = "black"),
-      par.settings = list(axis.line = list(col = 'transparent')),
-      )
+scatterplot3d(testdataframe, color = "blue")
 

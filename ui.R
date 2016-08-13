@@ -6,11 +6,18 @@
 # hier de mogelijkheden om aan te zitten.
 
 library(shiny)
-
-shinyUI(fluidPage(
+shinyUI(navbarPage("Heiser transformation",
+                   tabPanel("Introduction",
+                            titlePanel("What is this for a thing?"),
+                            mainPanel(
+                                p("This is a introduction page")
+                            )
+                            ),
+                   tabPanel("Proportions player",
+    fluidPage(
 
   # Application title
-  titlePanel("Transformation player"),
+  titlePanel("Changing proportions and their effect"),
   
 
   # Sidebar with a slider input 
@@ -47,6 +54,18 @@ shinyUI(fluidPage(
 Geometric representation of association between categories. 
 Psychometrika, 69(4), 513–545. http://doi.org/10.1007/bf02289854
  ")
-    )
-  )
-))
+    ) # closes mainPanel
+  ) # closes sidebar layout
+)  # closes fluidpage
+
+), # closes tabpale.
+tabPanel("Real world applications",
+         fluidPage(
+             sidebarLayout(
+                 sidebarPanel(),
+                 mainPanel( )
+             )# sidebarlayout end
+         )#fluidpage end
+         )# panel end
+) # closes navbarpage
+)
