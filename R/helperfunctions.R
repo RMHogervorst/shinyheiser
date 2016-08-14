@@ -27,6 +27,14 @@ vertices_create<-function(C1,C2,C3){
     vertices
 }
 
+
+## check and fix variables.
+check_and_fix_num<-function(variablename){
+    if(!class(variablename)== "numeric"){variablename<-as.numeric(variablename)}
+    return(variablename)
+}
+
+
 lines<- function(vert, x, y, line_colour){
     return(list(geom_segment(data = vert, aes(x = x[1], xend = x[3], y= y[1], yend= y[3]), colour = line_colour ),
                 geom_segment(data = vert, aes(x = x[1], xend = x[2], y= y[1], yend= y[2]), colour = line_colour ), #left to up
