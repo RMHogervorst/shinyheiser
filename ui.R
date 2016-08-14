@@ -23,7 +23,7 @@ p("There are multiple ways to plot three dimensions on a flat screen.
 img(src = "http://www.lboro.ac.uk/microsites/research/phys-geog/tri-plot/fig1.png"),
 p("Heiser (2004) shows another way to do this. by transforming the probabilities
   into a triangle with points closer to an corner with a larger probabilities."),
-img(src="https://github.com/RMHogervorst/heisertransform/blob/master/README-unnamed-chunk-2-1.png"),
+img(src="https://raw.githubusercontent.com/RMHogervorst/heisertransform/master/README-unnamed-chunk-2-1.png"),
 h3("What can we find in this shiny app?"),
 p("On the next page (Proportion player) I display what happens when proportions change. 
   You can change the proportions to see what happens with the shape of the triangle"),
@@ -34,7 +34,7 @@ p("In the third page (Real world example) I show what you can do with these tria
   location of all the people with a certain property."),
 p("This is an example website, a mock up I created for the course developing data projects for coursera. 
   You can find the code of this project in 
-  <href='https://github.com/RMHogervorst/shinyheiser/'>my github page </a>.")
+  <'https://github.com/RMHogervorst/shinyheiser/'>.")
                                   
                             
                             )

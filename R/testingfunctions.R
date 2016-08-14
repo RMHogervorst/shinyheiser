@@ -15,10 +15,10 @@ testdataframe <- data.frame(
     z=c(0,0,.5,1, 0) 
     )
 
-scatterplot3d::scatterplot3d(testdataframe, color = "blue")
+#scatterplot3d::scatterplot3d(testdataframe, color = "blue")
 
-werepeople <- readRDS("~/docs/actief/Projecten/werewolf/data/werepeople.RDS")
-#werepeople <- readRDS("data/werepeople.RDS")
+w#erepeople <- readRDS("~/docs/actief/Projecten/werewolf/data/werepeople.RDS")
+werepeople <- readRDS("data/werepeople.RDS")
 plot(CreateVertices(werepeople, "normal" ,       "wererabbit"   , "werewolf" ,verticeName = FALSE))
 points(Prob2Coord(werepeople, "normal" ,       "wererabbit"   , "werewolf", append = FALSE), pch = 4)
 
