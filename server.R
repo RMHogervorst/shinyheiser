@@ -11,6 +11,7 @@ library(ggplot2)
 source("R/helperfunctions.R")
 source("R/heisertransformfunctions.R")
 
+
 shinyServer(function(input, output) {
     output$text1 <- renderText({ 
        paste(1-input$leftcorner -input$topcorner)

@@ -8,11 +8,35 @@
 library(shiny)
 shinyUI(navbarPage("Heiser transformation",
                    tabPanel("Introduction",
-                            titlePanel("Introduction to what we are for now calling Heiserstransformations"),
+                            titlePanel("Introduction "),
                             mainPanel(
-                                p("This is a introduction page describing the heiserpackage. 
-                                  This is a way to transform probability information from three
-                                  categories into a 2 dimensional picture. ")
+                                h3("This page describes the functionality of
+this shiny app."),p("In many statistical prediction techniques the endresult is not
+a clearcut answer but a probability of some classification. 
+Today we handle the special case of three possible classes, and their probability.
+                    When you have two outcomes, 2 dimensions, we can plot the probabilities 
+                    into a 2 dimensional plot. When there are 3 outcomes we can view this
+                    in a 3-dimensional plot. However this is very inpractical."),
+p("There are multiple ways to plot three dimensions on a flat screen. 
+  We can put three axis on one image such as in triplots (below). 
+  However, distances between points are no longer euclidian."),
+img(src = "http://www.lboro.ac.uk/microsites/research/phys-geog/tri-plot/fig1.png"),
+p("Heiser (2004) shows another way to do this. by transforming the probabilities
+  into a triangle with points closer to an corner with a larger probabilities."),
+img(src="https://github.com/RMHogervorst/heisertransform/blob/master/README-unnamed-chunk-2-1.png"),
+h3("What can we find in this shiny app?"),
+p("On the next page (Proportion player) I display what happens when proportions change. 
+  You can change the proportions to see what happens with the shape of the triangle"),
+p("In the third page (Real world example) I show what you can do with these triangles.
+  I created a dataset with probabilities that people are werewolf, wererabbit or normal.
+  All these people have real properties such as BMI, personality measures and so forth.
+  you can color the people by their properties and it is possible to place a dot at the central
+  location of all the people with a certain property."),
+p("This is an example website, a mock up I created for the course developing data projects for coursera. 
+  You can find the code of this project in 
+  <href='https://github.com/RMHogervorst/shinyheiser/'>my github page </a>.")
+                                  
+                            
                             )
                             ),
                    tabPanel("Proportions player",
@@ -35,7 +59,9 @@ shinyUI(navbarPage("Heiser transformation",
   p("use the two sliders to change the proportions, the third one will change
     automatically. Since proportions of a group can never exceed 1, the third
     proportion will be calculated automagically. Larger proportions pull the
-    triangle towards them."),
+    triangle towards them. I did not validate this app, so it is possible to 
+    to have a negative value for the third category, which makes no sense. 
+    You cannot have a negative probability."),
         sliderInput("leftcorner",
                   "Proportion 1 (left):",
                   min = 0,
