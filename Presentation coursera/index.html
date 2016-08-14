@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heisertransform</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Heisertransform">
+  <meta name="author" content="Roel M. Hogervorst">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Heisertransform</h1>
+    <h2>A presentation about my shiny app</h2>
+    <p>Roel M. Hogervorst<br/>researcher Leiden University</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Intro</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This presentation describes my shiny app. This shiny application gives
+a short introduction and two examples of a certain transformation that helps to visually display relative probabilities to categorical assignment.</p>
+
+<h2>Wait what? </h2>
+
+<h2>werewolves</h2>
+
+<p>What do I mean with categorical assignment? I could classify you as
+normal, a werewolf or a wererabbit. Since everyone knows that werewolves and
+humans are indistinguishable, and that wererabbits are very similar to werewolves, 
+it is very hard to find out what type people are.  I could build a model that 
+uses all sorts of clues to determine the change that you are a werewolf, a 
+normal person or a wererabbit. 
+The endresult is for every person three probabilities, one for werewolf, normal
+and wererabbit. </p>
+
+<p>But what if we want to display those probabilities for an entire group?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Transformation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To visualize the probabilities of every person in a group I previously made
+an implementation of heiser (2004). The endresult is a triangle with three corners
+also called vertices, representing the relative frequency of the categories. 
+Individual points (persons for instance) in the triangle have a relative position 
+based on strength of association towards the vertices (category). </p>
+
+<p>Thus points closer to a vertice have a larger probability towards that category.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Triangles</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This triangle approach is distinct from other triangle plots known as terniary plots, trilinear diagrams or triplots where every side of the triangle displays a dimension, effectively creating a triangular coordinate system. We can even color the points based on a category
+or plot the central position of all people with a certain aspect. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Example plot</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>## Error in fortify(data): object &#39;ver&#39; not found
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Further</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Find the application online at <a href="https://rmhogervorst.shinyapps.io/shinyheiser/">https://rmhogervorst.shinyapps.io/shinyheiser/</a></p>
+
+<p>This is previous work on this <a href="https://github.com/RMHogervorst/heisertransform">package</a>
+Read the original paper at: <a href="https://dx.doi.org/10.1007/BF02289854">https://dx.doi.org/10.1007/BF02289854</a></p>
+
+<p>Look for more of my projects at my <a href="https://github.com/RMHogervorst/">github</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Intro'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Transformation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Triangles'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example plot'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Further'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
