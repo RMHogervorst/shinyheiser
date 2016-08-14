@@ -30,6 +30,7 @@
 #' @family Heiser transform functions
 #' @export
 CreateVertices <- function(df, var_left, var_top, var_right, verticeName = T) {
+    if(grep("tbl_df",  attr(werepeople, "class")) >0)df <- as.data.frame(df)
     #assigning variables
     varLeft <- df[, var_left]
     varTop <- df[, var_top]
@@ -72,6 +73,7 @@ CreateVertices <- function(df, var_left, var_top, var_right, verticeName = T) {
 #' @family Heiser transform functions
 #' @export
 Prob2Coord<-function(df, var_left, var_top, var_right, append=FALSE) {
+    if(grep("tbl_df",  attr(werepeople, "class")) >0)df <- as.data.frame(df)
     #assigning variables
     varLeft <-df[,var_left]
     varTop <- df[,var_top]

@@ -8,6 +8,7 @@
 ## This is actually a helper function,
 ## that does transformation from 3d to 2d projection.
 ## but it does no checks. 
+suppressPackageStartupMessages(library("dplyr"))
 ## 
 vertices_create<-function(C1,C2,C3){
     #V1
@@ -46,17 +47,33 @@ corners<-function(vert, x, y, colour_left = "#cc0000", colour_top = "#ffca00", c
         geom_point(data = vert[1,], aes(x, y),  shape = shape,  size = size, stroke = stroke, colour = colour_left),
         geom_point(data = vert[2,], aes(x, y),  shape = shape,  size = size, stroke = stroke, colour = colour_top),
         geom_point(data = vert[3,], aes(x, y),  shape = shape,  size = size, stroke = stroke, colour = colour_right)
-    ))}
-theme_heiser<- theme_grey() %+replace% theme(axis.line=element_blank(),
+    ))
+}
+theme_heiser<- theme_grey() + theme(axis.line=element_blank(),
                                              axis.text.x=element_blank(),
                                              axis.text.y=element_blank(),
                                              axis.ticks=element_blank(),
                                              axis.title.x=element_blank(),
                                              axis.title.y=element_blank(),
-                                             legend.position="none",
+                                            # legend.position="none",
                                              panel.background=element_blank(),
                                              panel.border=element_blank(),
                                              panel.grid.major=element_blank(),
                                              panel.grid.minor=element_blank(),
                                              plot.background=element_blank())
+
+centroidcalculator <- function(dataset, selectionvar){
+    centroids <-dataset %>% 
+        group_by_(selectionvar) %>% 
+        summarize(mx = mean(x),
+                  my= mean(y),
+                  sdx = sd(x),
+                  sdy = sd(y),
+                  N = n()
+                  )
+    centroids
+    
+}
+
+#centroidcalculator(point, "sex")
 

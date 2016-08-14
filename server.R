@@ -33,6 +33,22 @@ shinyServer(function(input, output) {
     print(g)
 
   })
+  output$plotsecondpage <- renderPlot({
+      ver <- CreateVertices(werepeople, "normal" ,"wererabbit","werewolf" )
+      point <- Prob2Coord(werepeople, "normal" ,"wererabbit","werewolf", append = TRUE)
+      #scaffolding 
+      g <- ggplot()+ 
+          lines(vert = ver, line_colour = "blue")+
+          corners(ver) + 
+          theme_heiser  +
+          geom_point(data = point, aes_string("x","y", 
+                                              color = input$coloroverlay), alpha = input$alpha)+
+                       # sets the transparancy
+          geom_point(data = centroidcalculator(point, input$centroid), 
+                     aes_string("mx","my",size = "N", color = input$centroid),alpha = input$alpha2)
+      print(g)
+  })
+  output$textthingy <- renderText(input$coloroverlay)
 
 }# end of shinyserver brackets
 ) #end of funciton

@@ -65,8 +65,49 @@ Psychometrika, 69(4), 513–545. http://doi.org/10.1007/bf02289854
 tabPanel("Real world applications",
          fluidPage(
              sidebarLayout(
-                 sidebarPanel(),
-                 mainPanel( )
+                 sidebarPanel( 
+                     h1("Details"),
+                     #inputs for selection
+                     selectInput("coloroverlay", "Color overlay:",
+                                 c("day of the week"="weekday",
+                                   "Sex"="sex",
+                                   "Favorite food"="favorite_food",
+                                   "Allergy"="allergies",
+                                   "Ethnicity/race"="ethnicity",
+                                   "Eye color"="eye_color",
+                                   "Hair color"="haircolor",
+                                   "Blood type"="blood_type",
+                                   "Level of scratches"="scratch",
+                                   "Level of itchiness"="itch",
+                                   "Openness to experience"="BFI_O",
+                                   "Conscienciousness"= "BFI_C")
+                                 ),
+                     sliderInput("alpha", "Transparancy", min = 0, max =1,value = .9)  ,
+                     selectInput("centroid", "Type of centroid:",
+                                 c("nothing"=NULL,
+                                 "day of the week"="weekday",
+                                 "Sex"="sex",
+                                 "Favorite food"="favorite_food",
+                                 "Allergy"="allergies",
+                                 "Ethnicity/race"="ethnicity",
+                                 "Eye color"="eye_color",
+                                 "Hair color"="haircolor",
+                                 "Blood type"="blood_type",
+                                 "Level of scratches"="scratch",
+                                 "Level of itchiness"="itch",
+                                 "Openness to experience"="BFI_O",
+                                 "Conscienciousness"= "BFI_C")),
+                     sliderInput("alpha2", "Transparancy", min = 0, max =1,value = 0)
+                     ),
+                 mainPanel(
+                     h2("Probability of being normal, werewolf, or wererabbit."),
+                     plotOutput("plotsecondpage") ,
+                     textOutput("textthingy"),
+                     #textOutput("centroid"),
+                     p("Data created seperately in the werewolf project. 
+                       See <https://github.com/RMHogervorst/werewolf>")
+                     
+                     )#closes mainpanel
              )# sidebarlayout end
          )#fluidpage end
          )# panel end
