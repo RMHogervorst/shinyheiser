@@ -8,6 +8,7 @@
 
 library(shiny)
 library(ggplot2)
+source("R/helperfunctions.R")
 source("R/heisertransformfunctions.R")
 
 shinyServer(function(input, output) {
@@ -33,4 +34,5 @@ shinyServer(function(input, output) {
 
   })
 
-})
+}# end of shinyserver brackets
+) #end of funciton

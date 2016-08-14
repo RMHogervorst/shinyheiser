@@ -8,9 +8,11 @@
 library(shiny)
 shinyUI(navbarPage("Heiser transformation",
                    tabPanel("Introduction",
-                            titlePanel("What is this for a thing?"),
+                            titlePanel("Introduction to what we are for now calling Heiserstransformations"),
                             mainPanel(
-                                p("This is a introduction page")
+                                p("This is a introduction page describing the heiserpackage. 
+                                  This is a way to transform probability information from three
+                                  categories into a 2 dimensional picture. ")
                             )
                             ),
                    tabPanel("Proportions player",
@@ -28,6 +30,7 @@ shinyUI(navbarPage("Heiser transformation",
     on a three axis (x,y,z) then we can connect the three points
     inside the cube with lines. This intersection is a triangle as displayed here.
     If the proportions change then the shape of the triangle changes as well."),
+    img(src='https://wm.math4allview.appspot.com/getresource?blob-key=AMIfv94aQ-VtHJmu9ksSUc4XDgaDu57A_ciFWUrjQYHT0-f9d69Gwpkzy7FBBRZ67kft2De_g1ClEqYHbVFXU6tqb8tLPOneQD0H2W2GF406xXB9KsWNTWNWQ1ED0ctsvWSgvJYTVQ0piF_waVA0UVX0JOIoKx3mxSCJoY8wz5TDst0Q7aM_heQ%0A', align = "center", width = "200px"),
   h3("Instructions"),
   p("use the two sliders to change the proportions, the third one will change
     automatically. Since proportions of a group can never exceed 1, the third
