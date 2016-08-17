@@ -8,6 +8,7 @@
 
 library(shiny)
 library(ggplot2)
+library(plot3D)
 source("R/helperfunctions.R")
 source("R/heisertransformfunctions.R")
 
@@ -50,6 +51,28 @@ shinyServer(function(input, output) {
       print(g)
   })
   output$textthingy <- renderText(input$coloroverlay)
-
+  output$threeD <- renderPlot({
+      scatter3D(werepeople$normal,
+                werepeople$werewolf,
+                werepeople$wererabbit,
+                phi=input$phi,
+                theta=input$theta,
+                pch=16,
+                xlim=c(0, 1),
+                ylim=c(0, 1),
+                zlim=c(0, 1),
+                #labels = c("Normal", "Werewolf", "Wererabbit")
+                xlab ="Normal",
+                ylab ="Werewolf",
+                zlab = "Wererabbit",
+                col = "blue"
+                )
+      # lines3D(x=c(0, xmax, 0, 0, 0, 0, xmax), 
+      #         y=c(0, 0, ymax, 0, 0, 0, 0), 
+      #         z=c(0, 0, 0, zmax, 0, zmax, 0), 
+      #         lwd=4, 
+      #         add=T
+      # )
+  })
 }# end of shinyserver brackets
 ) #end of funciton

@@ -136,6 +136,16 @@ tabPanel("Real world applications",
                      )#closes mainpanel
              )# sidebarlayout end
          )#fluidpage end
-         )# panel end
+         ),# panel end
+tabPanel("3dnavigation",
+         mainPanel(
+             #actionButton(inputId = "go", label = "Update"),
+             #numericInput(inputId="num",label="Choose the number of objects to draw", value=100, min=1, step=25),
+             numericInput(inputId="phi", label="Choose colatitude angle of plot (up/down)", value=15, min=0, step=10),
+             numericInput(inputId="theta", label="Choose azimuthal angle of plot(left/right)", value=70, min=0, step=10),
+             plotOutput("threeD"),
+             p("As you can see all the points are plotted into 1 plane. In the form of a triangle")
+             )
+         )#panelclose
 ) # closes navbarpage
 )
